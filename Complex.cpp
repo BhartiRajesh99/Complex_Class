@@ -19,10 +19,9 @@ class Complex{
                 cout<<"Number: "<<real<<"+"<<img<<"i"<<endl;
         }
         Complex operator!(){
-            Complex temp;
-            temp.real=0;
-            temp.img=0;
-            return temp;
+            this->real=0;
+            this->img=0;
+            return *this;
         }
         Complex operator-(){
             Complex temp;
@@ -92,6 +91,7 @@ class Complex{
         Complex operator--(int dummy){
             Complex temp;
             temp.real=real--;
+            temp.img=img--;
             return temp;
         }
         friend istream& operator>>(istream&,Complex&);
